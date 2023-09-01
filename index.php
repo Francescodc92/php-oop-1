@@ -56,5 +56,125 @@
   $fastAndFouriouse = new Muvie('fast and fouriouse', 'ciccio' , 2017 , 'action' , true);
   ?>
 
+  
+<table>
+    <thead>
+      <tr>
+        <td>
+          titolo
+        </td>
+        <td>
+          direttore
+        </td>
+        <td>
+          anno
+        </td>
+        <td>
+          genere
+        </td>
+        <td>
+          disponibile
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <?php 
+           if(  $onePice -> title != null){
+            echo $onePice -> title;
+          }else{
+            echo 'sconosciuto';
+          }   
+          ?>
+        </td>
+        <td>
+          <?php 
+            if($onePice -> director != null){
+              echo $onePice -> director;
+            }else{
+              echo 'sconosciuto';
+            }
+          ?>
+        </td>
+        <td>
+          <?php 
+            if( $onePice -> getYear() != null){
+              echo $onePice -> getYear();
+            }else{
+              echo 'sconosciuto';
+            }
+            
+          ?>
+        </td>
+        <td>
+          <?php 
+            if($onePice -> genre != null){
+              echo $onePice -> genre;
+            }else{
+              echo 'sconosciuto';
+            }
+          ?>
+        </td>
+        <td>
+          <?php 
+            if ($onePice -> getIsAvailable() != false ) {
+              echo 'disponibile';
+            }else{
+              echo 'non disponibile';
+            }
+          ?>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <?php 
+           if(  $fastAndFouriouse -> title != null){
+            echo $fastAndFouriouse -> title;
+          }else{
+            echo 'sconosciuto';
+          }   
+          ?>
+        </td>
+        <td>
+          <?php 
+            if($fastAndFouriouse -> director != null){
+              echo $fastAndFouriouse -> director;
+            }else{
+              echo 'sconosciuto';
+            }
+          ?>
+        </td>
+        <td>
+          <?php 
+            if( $fastAndFouriouse -> getYear() != null){
+              echo $fastAndFouriouse -> getYear();
+            }else{
+              echo 'sconosciuto';
+            }
+            
+          ?>
+        </td>
+        <td>
+          <?php 
+            if($fastAndFouriouse -> genre != null){
+              echo $fastAndFouriouse -> genre;
+            }else{
+              echo 'sconosciuto';
+            }
+          ?>
+        </td>
+        <td>
+          <?php 
+            if ($fastAndFouriouse -> getIsAvailable() != false ) {
+              echo 'disponibile';
+            }else{
+              echo 'non disponibile';
+            }
+          ?>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
