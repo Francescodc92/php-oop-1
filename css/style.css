@@ -5,3 +5,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+table{
+  border-collapse: collapse;
+}
+
+thead td{
+  color: red;
+  text-align: center;
+}
+
+td{
+  border: 1px solid #ccc;
+  padding: 5px 3px;
+  border-collapse: collapse;
+}

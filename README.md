@@ -1,8 +1,8 @@
-> Esercizio ...
+> Esercizio PHP OOP 1
 
 ![preview](./.github/preview.png)
 
-## ...
+## PHP OOP 1
 
 - DESCRIZIONE:
   create un file index.php in cui:
