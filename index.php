@@ -9,25 +9,25 @@
 </head>
 <body>
   <?php 
-  class Muvie {
+  class Movie {
     public $title;
     public $director;
     private $year;
-    public $genre;
+    public $genre = [];
     private $isAvailable;
 
     public function __construct( 
       string $title,
       ?string $director, 
       int $year, 
-      string $genre,
+      array|string $genre,
       bool $isAvailable
     ) //per ora come stringa ma da cambiare in array nel bonus 1  
     {
       $this-> title = $title;
       $this-> director = $director;
       $this-> setYear($year);
-      $this-> genre = $genre;
+      $this-> setGenre($genre);
       $this-> setIsAvailable($isAvailable);
     }
 
@@ -40,6 +40,10 @@
       $this-> year = $year;
     }
 
+    public function setGenre(array $genre){
+      $this-> genre = $genre;
+    }
+
     //getters
     public function getIsAvailable(){
       return $this-> isAvailable; 
@@ -48,16 +52,23 @@
       return $this-> year; 
     }
 
+    public function getGenre(){
+      return implode(',', $this -> genre);
+    }
+
 }
   
 
 
-  $onePice = new Muvie('one pice', null , 2023 , 'fantasy' , false);
-  $fastAndFouriouse = new Muvie('fast and fouriouse', 'ciccio' , 2017 , 'action' , true);
+  $onePice = new Movie('one pice', null , 2023 , ['fantasy'] , false);
+  $fastAndFouriouse = new Movie('fast and fouriouse', 'ciccio' , 2017 , ['action'] , true);
+  $barbie = new Movie('barbie', 'ciccioDue' , 2023 , ['booh', 'magari lo avessi capito'] , true);
+  
+
   ?>
 
   
-<table>
+  <table>
     <thead>
       <tr>
         <td>
@@ -110,7 +121,7 @@
         <td>
           <?php 
             if($onePice -> genre != null){
-              echo $onePice -> genre;
+              echo $onePice -> getGenre();
             }else{
               echo 'sconosciuto';
             }
@@ -158,7 +169,7 @@
         <td>
           <?php 
             if($fastAndFouriouse -> genre != null){
-              echo $fastAndFouriouse -> genre;
+              echo $fastAndFouriouse -> getGenre();
             }else{
               echo 'sconosciuto';
             }
@@ -167,6 +178,54 @@
         <td>
           <?php 
             if ($fastAndFouriouse -> getIsAvailable() != false ) {
+              echo 'disponibile';
+            }else{
+              echo 'non disponibile';
+            }
+          ?>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <?php 
+           if(  $barbie -> title != null){
+            echo $barbie -> title;
+          }else{
+            echo 'sconosciuto';
+          }   
+          ?>
+        </td>
+        <td>
+          <?php 
+            if($barbie -> director != null){
+              echo $barbie -> director;
+            }else{
+              echo 'sconosciuto';
+            }
+          ?>
+        </td>
+        <td>
+          <?php 
+            if( $barbie -> getYear() != null){
+              echo $barbie -> getYear();
+            }else{
+              echo 'sconosciuto';
+            }
+            
+          ?>
+        </td>
+        <td>
+          <?php 
+            if($barbie -> genre != null){
+              echo $barbie -> getGenre();
+            }else{
+              echo 'sconosciuto';
+            }
+          ?>
+        </td>
+        <td>
+          <?php 
+            if ($barbie -> getIsAvailable() != false ) {
               echo 'disponibile';
             }else{
               echo 'non disponibile';
