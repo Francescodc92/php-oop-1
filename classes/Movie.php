@@ -1,10 +1,11 @@
 <?php 
-
+require_once __DIR__.'/Cast.php';
 class Movie {
   public $title;
   public $director;
   private $year;
   public $genre = [];
+  public $cast = [];
   private $isAvailable;
 
   public function __construct( 
@@ -12,6 +13,7 @@ class Movie {
     ?string $director, 
     int $year, 
     array|string $genre,
+    array $cast,
     bool $isAvailable
   ) //per ora come stringa ma da cambiare in array nel bonus 1  
   {
@@ -19,6 +21,7 @@ class Movie {
     $this-> director = $director;
     $this-> setYear($year);
     $this-> setGenre($genre);
+    $this-> cast = $cast;
     $this-> setIsAvailable($isAvailable);
   }
 

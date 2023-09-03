@@ -45,6 +45,13 @@
       </td>
       <td>
         <?php 
+          foreach ($muvie->cast as $actorObj) {
+            echo  '<p>'.$actorObj->getFullname() .','.'</p>';
+          }
+        ?>
+      </td>
+      <td>
+        <?php 
           if ($muvie -> getIsAvailable() != false ) {
             echo 'disponibile';
           }else{

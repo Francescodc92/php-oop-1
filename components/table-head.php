@@ -16,6 +16,9 @@ echo '
       genere
     </td>
     <td>
+      attori
+    </td>
+    <td>
       disponibile
     </td>
   </tr>
